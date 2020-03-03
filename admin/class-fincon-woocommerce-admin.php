@@ -81,6 +81,36 @@ class Fincon_Woocommerce_Admin {
 	 *
 	 * @since    1.0.0
 	 */
+	public function check_for_update(){
+
+
+        $config = array(
+            'slug'               => plugin_basename( __FILE__ ),
+            'proper_folder_name' => 'fincon-woocommerce',
+            'api_url'            => 'https://api.github.com/theham/fincon-woocommerce',
+            'raw_url'            => 'https://raw.github.com/theham/fincon-woocommerce/master',
+            'github_url'         => 'https://github.com/theham/fincon-woocommerce',
+            'zip_url'            => 'https://github.com/theham/fincon-woocommerce/archive/master.zip',
+            'homepage'           => 'https://github.com/theham/fincon-woocommerce',
+            'sslverify'          => true,
+            'requires'           => '4.0',
+            'tested'             => '4.9.8',
+            'readme'             => 'README.md',
+            'access_token'       => '',
+        );
+
+        new fincon_updater( $config );
+
+
+	}
+
+
+
+	/**
+	 * Creating Settings Tab Page
+	 *
+	 * @since    1.0.0
+	 */
 	public function get_settings_pages($settings){
 
 
